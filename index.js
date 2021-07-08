@@ -49,5 +49,13 @@ module.exports = {
                 'varsIgnorePattern': '^_'
             }
         ]
-    }
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.vue"],
+            "rules": {
+                "no-undef": "off"
+            }
+        }
+    ]
 }
