@@ -20,7 +20,7 @@ module.exports = {
     ],
     'rules': {
         'sort-imports-es6-autofix/sort-imports-es6': 'error',
-        'unused-imports/no-unused-imports': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'no-multiple-empty-lines': [
             'error',
             {
