@@ -42,6 +42,7 @@ module.exports = {
             2
         ],
         'no-multi-spaces': 'error',
+        "no-unused-vars": "off",
         '@typescript-eslint/no-unused-vars': [
             'error',
             {
