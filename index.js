@@ -48,6 +48,29 @@ module.exports = {
                 'argsIgnorePattern': '^_',
                 'varsIgnorePattern': '^_'
             }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "array-bracket-spacing": [
+            "error",
+            "always"
+        ],
+        "space-after-keywords": ["error", "always"],
+        "object-property-newline": "error",
+        "object-curly-newline": [
+            "error",
+            {
+                "multiline": true,
+                "consistent": true
+            }
+        ],
+        "key-spacing": [
+            "error",
+            {
+                "mode": "strict"
+            }
         ]
     },
     "overrides": [
