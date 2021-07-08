@@ -57,7 +57,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "space-after-keywords": ["error", "always"],
+        "keyword-spacing": ["error", "always"],
         "object-property-newline": "error",
         "object-curly-newline": [
             "error",
