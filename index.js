@@ -10,77 +10,25 @@ module.exports = {
         'sourceType': 'module'
     },
     'extends': [
-        'eslint:recommended',
-        'plugin:vue/vue3-recommended'
+        'plugin:vue/vue3-recommended',
+        'plugin:prettier-vue/recommended',
+        'prettier',
     ],
     'plugins': [
         'sort-imports-es6-autofix',
-        'unused-imports',
-        '@typescript-eslint'
+        'unused-imports'
     ],
     'rules': {
         'sort-imports-es6-autofix/sort-imports-es6': 'error',
         'unused-imports/no-unused-imports': 'error',
-        'no-multiple-empty-lines': [
-            'error',
-            {
-                'max': 1,
-                'maxEOF': 0,
-                'maxBOF': 0
-            }
-        ],
-        '@typescript-eslint/semi': [
-            'error',
-            'never'
-        ],
-        '@typescript-eslint/quotes': [
-            'error',
-            'single'
-        ],
-        '@typescript-eslint/indent': [
-            'error',
-            2
-        ],
-        'no-multi-spaces': 'error',
-        "no-unused-vars": "off",
-        "space-infix-ops": "error",
-        '@typescript-eslint/no-unused-vars': [
-            'error',
-            {
-                'argsIgnorePattern': '^_',
-                'varsIgnorePattern': '^_'
-            }
-        ],
-        "object-curly-spacing": [
-            "error",
-            "always"
-        ],
-        "array-bracket-spacing": [
-            "error",
-            "always"
-        ],
-        "keyword-spacing": "error",
-        "object-property-newline": "error",
-        "object-curly-newline": [
+        "prettier-vue/prettier": [
             "error",
             {
-                "multiline": true,
-                "consistent": true
-            }
-        ],
-        "key-spacing": [
-            "error",
-            {
-                "mode": "strict"
+                arrowParens: 'avoid',
+                singleQuote: true,
+                semi: false,
+                trailingComma: "none",
             }
         ]
-    },
-    "overrides": [
-        {
-            "files": ["*.ts", "*.vue"],
-            "rules": {
-                "no-undef": "off"
-            }
-        }
-    ]
+    }
 }
