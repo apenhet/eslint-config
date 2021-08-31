@@ -1,6 +1,6 @@
 {
   "name": "@apenhet/eslint-config",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "index.js",
   "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/)",
@@ -8,12 +8,9 @@
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier-vue": "^3.1.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "eslint-plugin-unused-imports": "^1.1.2",
     "eslint-plugin-vue": "^7.13.0",
-    "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
