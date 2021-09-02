@@ -93,6 +93,7 @@ module.exports = {
         }],
         "space-infix-ops": ["error", { "int32Hint": false }],
         "template-curly-spacing": ["error", "never"],
+        "no-undef": "off"
     },
     "overrides": [
         {
