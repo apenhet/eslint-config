@@ -21,10 +21,21 @@ module.exports = {
         'unused-imports'
     ],
     "rules": {
+        "sort-imports-es6-autofix/sort-imports-es6": ["error"],
+        "unused-imports/no-unused-imports": ["error"],
+        "unused-imports/no-unused-vars": [
+            "error",
+            { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+        ],
+        "space-in-parens": ["error", "never"],
+        "prefer-template": "error",
         "quotes": [
             "error",
             "single"
         ],
+        "block-spacing": [
+            "error",
+            "always"],
         "no-multi-spaces": "error",
         "comma-dangle": ["error", "never"],
         "arrow-parens": ["error", "as-needed"],
@@ -47,7 +58,8 @@ module.exports = {
             "error",
             {
                 "max": 1,
-                "maxEOF": 0
+                "maxEOF": 0,
+                "maxBOF": 0
             }
         ],
         "object-curly-newline": [
@@ -59,7 +71,6 @@ module.exports = {
         "object-property-newline": [
             "error",
             {
-                "allowMultiplePropertiesPerLine": false,
                 "allowAllPropertiesOnSameLine": false
             }
         ],
@@ -80,7 +91,8 @@ module.exports = {
             "argsIgnorePattern": "^_",
             "varsIgnorePattern": "^_"
         }],
-        "no-undef": "off"
+        "space-infix-ops": ["error", { "int32Hint": false }],
+        "template-curly-spacing": ["error", "never"],
     },
     "overrides": [
         {
@@ -96,6 +108,50 @@ module.exports = {
             ],
             "rules": {
                 "vue/no-v-html": "off",
+                "vue/padding-line-between-blocks": ["error", "always"],
+                "vue/block-tag-newline": ['error'],
+
+                "vue/custom-event-name-casing": ["error",
+                    "kebab-case"
+                ],
+
+                "vue/html-button-has-type": ["error"],
+                "vue/new-line-between-multi-line-property": ["error"],
+                "vue/next-tick-style": ["error", "promise"],
+                "vue/no-duplicate-attr-inheritance": ['error'],
+                "vue/no-export-in-script-setup": ["error"],
+                "vue/no-unused-properties": ['error'],
+                "vue/no-unused-refs": ['error'],
+                "vue/no-useless-mustaches": ['error'],
+                "vue/no-useless-v-bind": "error",
+                "vue/prefer-template": "error",
+                "vue/array-bracket-spacing": [
+                    "error",
+                    "always"
+                ],
+                "vue/template-curly-spacing": ["error", "never"],
+                "vue/object-curly-newline": [
+                    "error",
+                    {
+                        "multiline": true
+                    }
+                ],
+                "vue/object-curly-spacing": [
+                    "error",
+                    "always"
+                ],
+                "vue/block-spacing": [
+                    "error",
+                    "always"],
+                "vue/object-property-newline": [
+                    "error",
+                    {
+                        "allowAllPropertiesOnSameLine": false
+                    }
+                ],
+                "vue/space-in-parens": ["error", "never"],
+                "vue/space-infix-ops": ["error", { "int32Hint": false }],
+                "vue/component-name-in-template-casing": ["error", "PascalCase", { registeredComponentsOnly: false }],
                 "vue/max-attributes-per-line": [
                     "error",
                     {
@@ -109,9 +165,9 @@ module.exports = {
                         }
                     }
                 ],
+                "no-undef": "off",
                 "indent": "off",
                 "@typescript-eslint/indent": ["error", 2]
-
             }
         },
         {
@@ -120,10 +176,16 @@ module.exports = {
             parserOptions: {
                 project: ['./tsconfig.json']
             },
-            "extends": ["eslint:recommended",
+            "extends": [
+                "eslint:recommended",
                 "plugin:@typescript-eslint/recommended",
-                "plugin:@typescript-eslint/recommended-requiring-type-checking"],
-            "plugins": ["@typescript-eslint"],
+                "plugin:@typescript-eslint/recommended-requiring-type-checking"
+            ],
+            "plugins": [
+                'sort-imports-es6-autofix',
+                'unused-imports',
+                "@typescript-eslint"
+            ],
             "rules": {
                 "indent": "off",
                 "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -133,7 +195,6 @@ module.exports = {
                 "@typescript-eslint/no-unsafe-member-access": "off",
                 "@typescript-eslint/no-explicit-any": "off",
                 "@typescript-eslint/indent": ["error", 2],
-
                 "@typescript-eslint/no-unused-vars": ["error", {
                     "argsIgnorePattern": "^_",
                     "varsIgnorePattern": "^_"
