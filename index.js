@@ -59,6 +59,12 @@ module.exports = {
     },
     overrides: [
         {
+            files: ['**/*.spec.js'],
+            rules: {
+                'no-undef': 'off'
+            }
+        },
+        {
             files: ['**/*.vue'],
             parser: 'vue-eslint-parser',
             parserOptions: {
