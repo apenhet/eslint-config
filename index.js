@@ -81,6 +81,7 @@ module.exports = {
                 'prettier'
             ],
             rules: {
+                'no-undef': 'off',
                 'prettier/prettier': ['off'],
                 'prettier-vue/prettier': ['error', _prettier],
                 'vue/no-v-html': 'off',
@@ -110,6 +111,7 @@ module.exports = {
                 '@typescript-eslint'
             ],
             rules: {
+                'no-undef': 'off',
                 '@typescript-eslint/explicit-module-boundary-types': 'off',
                 '@typescript-eslint/no-unsafe-assignment': 'off',
                 '@typescript-eslint/no-unsafe-call': 'off',
