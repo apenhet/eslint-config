@@ -110,7 +110,6 @@ module.exports = {
                 '@typescript-eslint/no-unsafe-return': 'off',
                 '@typescript-eslint/no-unsafe-member-access': 'off',
                 '@typescript-eslint/no-explicit-any': 'off',
-                '@typescript-eslint/indent': ['error', 2],
                 '@typescript-eslint/no-unused-vars': [
                     'error',
                     {
