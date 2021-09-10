@@ -1,7 +1,7 @@
 let isVue2 = false
 
 try {
-    isVue2 = require('vue').default.version.startsWith('2')
+    isVue2 = require('vue').version.startsWith('2')
 } catch {
     // Nothing
 }
