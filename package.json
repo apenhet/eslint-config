@@ -1,6 +1,6 @@
 {
   "name": "@apenhet/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "index.js",
   "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/)",
@@ -11,7 +11,7 @@
     "@rushstack/eslint-patch": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^4.28.2",
-    "eslint": "^8.2.0",
+    "eslint": "^7.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-prettier-vue": "^3.1.0",
