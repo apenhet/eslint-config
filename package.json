@@ -1,6 +1,6 @@
 {
   "name": "@apenhet/eslint-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "index.js",
   "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/)",
