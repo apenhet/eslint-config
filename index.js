@@ -95,7 +95,10 @@ module.exports = {
                 'vue/no-duplicate-attr-inheritance': ['error'],
                 'vue/no-export-in-script-setup': ['error'],
                 'vue/no-unused-properties': ['error'],
-                'vue/no-unused-refs': ['error']
+                'vue/no-unused-refs': ['error'],
+                "vue/multi-word-component-names": ["error", {
+                    "ignores": ['default', 'error']
+                  }]
             }
         },
         {
@@ -120,6 +123,7 @@ module.exports = {
                 '@typescript-eslint/no-unsafe-return': 'off',
                 '@typescript-eslint/no-unsafe-member-access': 'off',
                 '@typescript-eslint/no-explicit-any': 'off',
+                '@typescript-eslint/unbound-method': 'off',
                 '@typescript-eslint/no-unused-vars': [
                     'error',
                     {
