@@ -1,12 +1,13 @@
 {
   "name": "@apenhet/eslint-config",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "main": "index.js",
-  "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/)",
   "publishConfig": {
-    "@apenhet:registry": "https://npm.pkg.github.com"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
+  "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
   "dependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
@@ -23,5 +24,14 @@
   },
   "eslintConfig": {
     "extends": "./index.js"
-  }
+  },
+  "description": "This is a shared ESlint config for åpenhet's projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apenhet/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apenhet/eslint-config/issues"
+  },
+  "homepage": "https://github.com/apenhet/eslint-config#readme"
 }
