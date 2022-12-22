@@ -29,12 +29,11 @@ module.exports = {
     root: true,
     env: {
         node: true,
-        browser: true,
-        es2021: true
+        browser: true
     },
     extends: _extends,
     parserOptions: {
-        ecmaVersion: 2021,
+        ecmaVersion: 2022,
         sourceType: 'module'
     },
     plugins: _plugins,
@@ -72,7 +71,7 @@ module.exports = {
             parser: 'vue-eslint-parser',
             parserOptions: {
                 parser: '@typescript-eslint/parser',
-                ecmaVersion: 2021,
+                ecmaVersion: 'latest',
                 sourceType: 'module'
             },
             extends: [
