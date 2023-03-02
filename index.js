@@ -113,8 +113,7 @@ module.exports = {
             plugins: [
                 'sort-imports-es6-autofix',
                 'unused-imports',
-                '@typescript-eslint',
-                'prettier-plugin-tailwindcss'
+                '@typescript-eslint'
             ],
             rules: {
                 'no-undef': 'off',
