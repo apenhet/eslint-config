@@ -80,7 +80,8 @@ module.exports = {
                     ? 'plugin:vue/recommended'
                     : 'plugin:vue/vue3-recommended',
                 'plugin:prettier-vue/recommended',
-                'prettier'
+                'prettier',
+                'prettier-plugin-tailwindcss'
             ],
             rules: {
                 'no-undef': 'off',
@@ -112,7 +113,8 @@ module.exports = {
             plugins: [
                 'sort-imports-es6-autofix',
                 'unused-imports',
-                '@typescript-eslint'
+                '@typescript-eslint',
+                'prettier-plugin-tailwindcss'
             ],
             rules: {
                 'no-undef': 'off',
