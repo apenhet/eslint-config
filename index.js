@@ -14,7 +14,7 @@ const _extends = [
     'prettier'
 ]
 
-const _plugins = ['sort-imports-es6-autofix', 'unused-imports', 'prettier-plugin-tailwindcss']
+const _plugins = ['sort-imports-es6-autofix', 'unused-imports']
 
 const _prettier = {
     singleQuote: true,
@@ -22,7 +22,8 @@ const _prettier = {
     printWidth: 80,
     tabWidth: 4,
     semi: false,
-    arrowParens: 'avoid'
+    arrowParens: 'avoid',
+    plugins: ['prettier-plugin-tailwindcss']
 }
 
 module.exports = {
