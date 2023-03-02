@@ -14,7 +14,7 @@ const _extends = [
     'prettier'
 ]
 
-const _plugins = ['sort-imports-es6-autofix', 'unused-imports']
+const _plugins = ['sort-imports-es6-autofix', 'unused-imports', 'prettier-plugin-tailwindcss']
 
 const _prettier = {
     singleQuote: true,
@@ -80,8 +80,7 @@ module.exports = {
                     ? 'plugin:vue/recommended'
                     : 'plugin:vue/vue3-recommended',
                 'plugin:prettier-vue/recommended',
-                'prettier',
-                'prettier-plugin-tailwindcss'
+                'prettier'
             ],
             rules: {
                 'no-undef': 'off',
