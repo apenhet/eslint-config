@@ -20,7 +20,7 @@
     "eslint-plugin-unused-imports": "latest",
     "eslint-plugin-vue": "latest",
     "prettier": "latest",
-    "prettier-plugin-tailwindcss": "^0.2.4",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "typescript": "latest"
   },
   "eslintConfig": {
