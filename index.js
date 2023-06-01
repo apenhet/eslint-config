@@ -1,6 +1,7 @@
 module.exports = {
     root: true,
     parserOptions: {
+        project: true,
         extraFileExtensions: ['.vue']
     },
     extends: [
@@ -14,6 +15,12 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint', 'autofix'],
     overrides: [
+        {
+            files: ['**/*.js'],
+            parserOptions: {
+                project: false
+            }
+        },
         {
             files: ['**/*.vue'],
             parser: 'vue-eslint-parser',
@@ -55,7 +62,20 @@ module.exports = {
             }
         ],
         '@typescript-eslint/method-signature-style': ['error', 'method'],
-        '@typescript-eslint/naming-convention': 'error',
+        '@typescript-eslint/naming-convention': [
+            'error',
+            {
+                selector: 'variable',
+                format: ['camelCase', 'UPPER_CASE'],
+                leadingUnderscore: 'allow',
+                trailingUnderscore: 'allow'
+            },
+
+            {
+                selector: 'typeLike',
+                format: ['PascalCase']
+            }
+        ],
         '@typescript-eslint/consistent-indexed-object-style': [
             'error',
             'record'
