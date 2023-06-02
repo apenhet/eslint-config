@@ -9,13 +9,14 @@
   },
   "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
-    "eslint-plugin-autofix": "latest",
     "eslint-plugin-prettier": "latest",
-    "@typescript-eslint/parser": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
     "eslint-plugin-vue": "latest",
+    "eslint-plugin-simple-import-sort": "latest",
+    "eslint-plugin-autofix": "latest",
     "typescript": "latest"
   },
   "eslintConfig": {
