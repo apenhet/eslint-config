@@ -41,6 +41,12 @@ module.exports = {
             extends: [
                 'plugin:@typescript-eslint/recommended-requiring-type-checking'
             ]
+        },
+        {
+            files: ['**/*.d.ts'],
+            rules: {
+                'autofix/no-unused-vars': 'off'
+            }
         }
     ],
     rules: {
@@ -85,6 +91,7 @@ module.exports = {
         'vue/no-setup-props-destructure': 'off',
         'vue/no-v-html': 'off',
         'vue/multi-word-component-names': 'off',
+        'vue/require-default-prop': 'off',
         '@typescript-eslint/naming-convention': [
             'error',
             {
