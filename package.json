@@ -1,6 +1,6 @@
 {
   "name": "@apenhet/eslint-config",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "license": "MIT",
   "main": "index.js",
   "publishConfig": {
@@ -11,12 +11,13 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
+    "@unocss/eslint-config": "^0.53.0",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
-    "eslint-plugin-prettier": "latest",
-    "eslint-plugin-vue": "latest",
-    "eslint-plugin-simple-import-sort": "latest",
     "eslint-plugin-autofix": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-simple-import-sort": "latest",
+    "eslint-plugin-vue": "latest",
     "typescript": "latest"
   },
   "eslintConfig": {
