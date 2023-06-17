@@ -5,10 +5,14 @@ module.exports = {
     root: true,
     parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module'
+        sourceType: 'module',
+        tsconfigRootDir: process.cwd(),
+        parser: '@typescript-eslint/parser',
+        project: ['./tsconfig.json']
     },
     extends: [
         'eslint:recommended',
+        'plugin:vue/vue3-recommended',
         'plugin:prettier/recommended',
         'prettier'
     ].concat(
@@ -19,17 +23,18 @@ module.exports = {
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
-            files: ['*.ts', '*.vue', '*.d.ts'],
+            files: ['*.js'],
+            parserOptions: {
+                project: false
+            }
+        },
+        {
+            files: ['*.vue', '*.ts'],
             plugins: ['@typescript-eslint'],
             extends: [
                 'plugin:@typescript-eslint/recommended',
                 'plugin:@typescript-eslint/recommended-requiring-type-checking'
             ],
-            parserOptions: {
-                tsconfigRootDir: process.cwd(),
-                parser: '@typescript-eslint/parser',
-                project: ['./tsconfig.json']
-            },
             rules: {
                 '@typescript-eslint/prefer-includes': 'error',
                 '@typescript-eslint/naming-convention': [
@@ -48,16 +53,16 @@ module.exports = {
             }
         },
         {
-            files: ['**/*.vue'],
+            files: ['*.vue'],
             parser: 'vue-eslint-parser',
-            extends: ['plugin:vue/vue3-recommended'],
             parserOptions: {
                 extraFileExtensions: ['.vue']
             }
         },
         {
-            files: ['**/*.d.ts'],
+            files: ['*.d.ts'],
             rules: {
+                'no-unused-vars': 'off',
                 'autofix/no-unused-vars': 'off'
             }
         }
