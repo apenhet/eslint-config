@@ -1,47 +1,56 @@
+const { existsSync } = require('node:fs')
+const { join } = require('node:path')
+
 module.exports = {
     root: true,
     parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module',
-        parser: '@typescript-eslint/parser',
-        project: true
+        sourceType: 'module'
     },
     extends: [
         'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:vue/vue3-recommended',
         'plugin:prettier/recommended',
         'prettier',
         '@unocss'
-    ],
-    parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint', 'simple-import-sort', 'autofix'],
+    ].concat(hasFile('uno.config.ts') ? ['@unocss'] : []),
+    plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
-            files: ['**/*.js'],
+            files: ['**/*.ts', '**/*.vue', '**/*.d.ts'],
+            plugins: ['@typescript-eslint'],
+            extends: [
+                'plugin:@typescript-eslint/recommended',
+                'plugin:@typescript-eslint/recommended-requiring-type-checking'
+            ],
             parserOptions: {
-                project: false
+                parser: '@typescript-eslint/parser',
+                project: true
             },
             rules: {
-                '@typescript-eslint/naming-convention': 'off',
-                '@typescript-eslint/prefer-includes': 'off'
+                '@typescript-eslint/prefer-includes': 'error',
+                '@typescript-eslint/naming-convention': [
+                    'error',
+                    {
+                        selector: 'variable',
+                        format: ['camelCase', 'UPPER_CASE'],
+                        leadingUnderscore: 'allow',
+                        trailingUnderscore: 'allow'
+                    },
+
+                    {
+                        selector: 'typeLike',
+                        format: ['PascalCase']
+                    }
+                ]
             }
         },
         {
             files: ['**/*.vue'],
             parser: 'vue-eslint-parser',
+            extends: ['plugin:vue/vue3-recommended'],
             parserOptions: {
                 extraFileExtensions: ['.vue']
-            },
-            extends: [
-                'plugin:@typescript-eslint/recommended-requiring-type-checking'
-            ]
-        },
-        {
-            files: ['**/*.ts'],
-            extends: [
-                'plugin:@typescript-eslint/recommended-requiring-type-checking'
-            ]
+            }
         },
         {
             files: ['**/*.d.ts'],
@@ -88,25 +97,17 @@ module.exports = {
             'error',
             'record'
         ],
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/prefer-ts-expect-error': 'error',
         'vue/no-setup-props-destructure': 'off',
         'vue/no-v-html': 'off',
         'vue/multi-word-component-names': 'off',
-        'vue/require-default-prop': 'off',
-        '@typescript-eslint/naming-convention': [
-            'error',
-            {
-                selector: 'variable',
-                format: ['camelCase', 'UPPER_CASE'],
-                leadingUnderscore: 'allow',
-                trailingUnderscore: 'allow'
-            },
-
-            {
-                selector: 'typeLike',
-                format: ['PascalCase']
-            }
-        ],
-        '@typescript-eslint/prefer-includes': 'error'
+        'vue/require-default-prop': 'off'
     }
+}
+
+function hasFile(file) {
+    return existsSync(join(process.cwd(), file))
 }
