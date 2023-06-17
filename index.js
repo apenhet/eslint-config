@@ -12,9 +12,9 @@ module.exports = {
         'plugin:prettier/recommended',
         'prettier'
     ].concat(
-        hasFile('uno.config.ts') ? ['@unocss'] : ['prettier-plugin-tailwindcss']
+        hasFile('uno.config.ts') ? ['@unocss'] : []
     ),
-    plugins: ['simple-import-sort', 'autofix'],
+    plugins: ['simple-import-sort', 'autofix', 'prettier-plugin-tailwindcss'],
     overrides: [
         {
             files: ['**/*.ts', '**/*.vue', '**/*.d.ts'],
