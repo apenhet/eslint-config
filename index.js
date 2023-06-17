@@ -10,9 +10,10 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:prettier/recommended',
-        'prettier',
-        '@unocss'
-    ].concat(hasFile('uno.config.ts') ? ['@unocss'] : []),
+        'prettier'
+    ].concat(
+        hasFile('uno.config.ts') ? ['@unocss'] : ['prettier-plugin-tailwindcss']
+    ),
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
