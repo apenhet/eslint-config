@@ -28,7 +28,7 @@ module.exports = {
             parserOptions: {
                 tsconfigRootDir: process.cwd(),
                 parser: '@typescript-eslint/parser',
-                project: ['./packages/tsconfig.json', './tsconfig.json']
+                project: ['./tsconfig.json']
             },
             rules: {
                 '@typescript-eslint/prefer-includes': 'error',
