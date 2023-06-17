@@ -19,15 +19,16 @@ module.exports = {
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
-            files: ['**/*.ts', '**/*.vue', '**/*.d.ts'],
+            files: ['*.ts', '*.vue', '*.d.ts'],
             plugins: ['@typescript-eslint'],
             extends: [
                 'plugin:@typescript-eslint/recommended',
                 'plugin:@typescript-eslint/recommended-requiring-type-checking'
             ],
             parserOptions: {
+                tsconfigRootDir: process.cwd(),
                 parser: '@typescript-eslint/parser',
-                project: true
+                project: ['./packages/tsconfig.json', './tsconfig.json']
             },
             rules: {
                 '@typescript-eslint/prefer-includes': 'error',
@@ -39,7 +40,6 @@ module.exports = {
                         leadingUnderscore: 'allow',
                         trailingUnderscore: 'allow'
                     },
-
                     {
                         selector: 'typeLike',
                         format: ['PascalCase']
@@ -107,10 +107,17 @@ module.exports = {
         'vue/no-setup-props-destructure': 'off',
         'vue/no-v-html': 'off',
         'vue/multi-word-component-names': 'off',
-        'vue/require-default-prop': 'off'
+        'vue/require-default-prop': 'off',
+        'no-multiple-empty-lines': [
+            'error',
+            {
+                max: 1,
+                maxBOF: 0,
+                maxEOF: 0
+            }
+        ]
     }
 }
-
 function hasFile(file) {
     return existsSync(join(process.cwd(), file))
 }
