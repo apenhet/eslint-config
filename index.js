@@ -10,15 +10,23 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         project: ['./tsconfig.json']
     },
+
+    ignorePatterns: [
+        '**/node_modules/*',
+        '**/.nuxt/*',
+        '.changeset/*',
+        '.github/*'
+    ],
     extends: [
         'eslint:recommended',
         'plugin:vue/vue3-recommended',
-        'plugin:prettier/recommended',
-        'prettier'
+        'plugin:prettier/recommended'
     ].concat(
         hasFile('uno.config.ts')
             ? ['@unocss']
-            : ['plugin:tailwindcss/recommended']
+            : hasFile('tailwind.config.ts')
+            ? ['plugin:tailwindcss/recommended']
+            : []
     ),
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
