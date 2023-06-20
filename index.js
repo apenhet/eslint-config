@@ -5,23 +5,9 @@ module.exports = {
     root: true,
     parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module',
-        tsconfigRootDir: process.cwd(),
-        parser: '@typescript-eslint/parser',
-        project: ['./tsconfig.json']
+        sourceType: 'module'
     },
-
-    ignorePatterns: [
-        '**/node_modules/*',
-        '**/.nuxt/*',
-        '.changeset/*',
-        '.github/*'
-    ],
-    extends: [
-        'eslint:recommended',
-        'plugin:vue/vue3-recommended',
-        'plugin:prettier/recommended'
-    ].concat(
+    extends: ['plugin:prettier/recommended'].concat(
         hasFile('uno.config.ts')
             ? ['@unocss']
             : hasFile('tailwind.config.ts')
@@ -31,14 +17,13 @@ module.exports = {
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
-            files: ['*.js'],
-            parserOptions: {
-                project: false
-            }
-        },
-        {
             files: ['*.vue', '*.ts'],
             plugins: ['@typescript-eslint'],
+            parserOptions: {
+                tsconfigRootDir: process.cwd(),
+                parser: '@typescript-eslint/parser',
+                project: ['./tsconfig.json']
+            },
             extends: [
                 'plugin:@typescript-eslint/recommended',
                 'plugin:@typescript-eslint/recommended-requiring-type-checking'
@@ -57,12 +42,40 @@ module.exports = {
                         selector: 'typeLike',
                         format: ['PascalCase']
                     }
-                ]
+                ],
+                '@typescript-eslint/no-unused-vars': 'off',
+                '@typescript-eslint/array-type': [
+                    'error',
+                    {
+                        default: 'array'
+                    }
+                ],
+                '@typescript-eslint/method-signature-style': [
+                    'error',
+                    'method'
+                ],
+                '@typescript-eslint/consistent-indexed-object-style': [
+                    'error',
+                    'record'
+                ],
+                '@typescript-eslint/no-unsafe-assignment': 'off',
+                '@typescript-eslint/unbound-method': 'off',
+                '@typescript-eslint/no-unsafe-member-access': 'off',
+                '@typescript-eslint/no-unsafe-call': 'off',
+                '@typescript-eslint/no-unsafe-return': 'off',
+                '@typescript-eslint/prefer-ts-expect-error': 'error'
             }
         },
         {
             files: ['*.vue'],
             parser: 'vue-eslint-parser',
+            extends: ['plugin:vue/vue3-recommended'],
+            rules: {
+                'vue/no-setup-props-destructure': 'off',
+                'vue/no-v-html': 'off',
+                'vue/multi-word-component-names': 'off',
+                'vue/require-default-prop': 'off'
+            },
             parserOptions: {
                 extraFileExtensions: ['.vue']
             }
@@ -89,6 +102,14 @@ module.exports = {
         ],
         'sort-vars': 'error',
         'prefer-template': 'error',
+        'no-multiple-empty-lines': [
+            'error',
+            {
+                max: 1,
+                maxBOF: 0,
+                maxEOF: 0
+            }
+        ],
         'prettier/prettier': [
             'error',
             {
@@ -99,34 +120,6 @@ module.exports = {
                 printWidth: 80,
                 arrowParens: 'avoid',
                 singleAttributePerLine: true
-            }
-        ],
-        '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/array-type': [
-            'error',
-            {
-                default: 'array'
-            }
-        ],
-        '@typescript-eslint/method-signature-style': ['error', 'method'],
-        '@typescript-eslint/consistent-indexed-object-style': [
-            'error',
-            'record'
-        ],
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/unbound-method': 'off',
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-        '@typescript-eslint/prefer-ts-expect-error': 'error',
-        'vue/no-setup-props-destructure': 'off',
-        'vue/no-v-html': 'off',
-        'vue/multi-word-component-names': 'off',
-        'vue/require-default-prop': 'off',
-        'no-multiple-empty-lines': [
-            'error',
-            {
-                max: 1,
-                maxBOF: 0,
-                maxEOF: 0
             }
         ]
     }
