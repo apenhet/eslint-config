@@ -7,13 +7,11 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module'
     },
-    extends: ['plugin:prettier/recommended'].concat(
-        hasFile('uno.config.ts')
-            ? ['@unocss']
-            : hasFile('tailwind.config.ts')
-            ? ['plugin:tailwindcss/recommended']
-            : []
-    ),
+    extends: hasFile('uno.config.ts')
+        ? ['@unocss']
+        : hasFile('tailwind.config.ts')
+        ? ['plugin:tailwindcss/recommended']
+        : [],
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
@@ -86,6 +84,10 @@ module.exports = {
                 'no-unused-vars': 'off',
                 'autofix/no-unused-vars': 'off'
             }
+        },
+        {
+            files: ['*'],
+            extends: ['plugin:prettier/recommended']
         }
     ],
     rules: {
