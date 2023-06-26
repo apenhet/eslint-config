@@ -1,33 +1,53 @@
-const { existsSync } = require('node:fs')
-const { join } = require('node:path')
-
 module.exports = {
     root: true,
     parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module'
+        sourceType: 'module',
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.vue', '.json']
     },
-    extends: hasFile('uno.config.ts')
-        ? ['@unocss']
-        : hasFile('tailwind.config.ts')
-        ? ['plugin:tailwindcss/recommended']
-        : [],
+    extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:vue/vue3-recommended',
+        'plugin:prettier/recommended',
+        'plugin:tailwindcss/recommended'
+    ],
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
         {
-            files: ['*.vue', '*.ts'],
-            plugins: ['@typescript-eslint'],
+            files: ['*.d.ts'],
+            rules: {
+                'no-unused-vars': 'off',
+                'autofix/no-unused-vars': 'off'
+            }
+        },
+        {
+            files: ['*.vue'],
+            parser: 'vue-eslint-parser',
+            rules: {
+                'vue/no-setup-props-destructure': 'off',
+                'vue/no-v-html': 'off',
+                'vue/multi-word-component-names': 'off',
+                'vue/require-default-prop': 'off'
+            }
+        },
+        {
+            files: ['*.ts'],
             parserOptions: {
-                tsconfigRootDir: process.cwd(),
-                parser: '@typescript-eslint/parser',
-                project: ['./tsconfig.json']
+                project: './tsconfig.json'
             },
-            extends: [
-                'plugin:@typescript-eslint/recommended',
-                'plugin:@typescript-eslint/recommended-requiring-type-checking'
-            ],
             rules: {
                 '@typescript-eslint/prefer-includes': 'error',
+                '@typescript-eslint/array-type': [
+                    'error',
+                    {
+                        default: 'array'
+                    }
+                ],
+                '@typescript-eslint/method-signature-style': [
+                    'error',
+                    'method'
+                ],
                 '@typescript-eslint/naming-convention': [
                     'error',
                     {
@@ -40,54 +60,8 @@ module.exports = {
                         selector: 'typeLike',
                         format: ['PascalCase']
                     }
-                ],
-                '@typescript-eslint/no-unused-vars': 'off',
-                '@typescript-eslint/array-type': [
-                    'error',
-                    {
-                        default: 'array'
-                    }
-                ],
-                '@typescript-eslint/method-signature-style': [
-                    'error',
-                    'method'
-                ],
-                '@typescript-eslint/consistent-indexed-object-style': [
-                    'error',
-                    'record'
-                ],
-                '@typescript-eslint/no-unsafe-assignment': 'off',
-                '@typescript-eslint/unbound-method': 'off',
-                '@typescript-eslint/no-unsafe-member-access': 'off',
-                '@typescript-eslint/no-unsafe-call': 'off',
-                '@typescript-eslint/no-unsafe-return': 'off',
-                '@typescript-eslint/prefer-ts-expect-error': 'error'
+                ]
             }
-        },
-        {
-            files: ['*.vue'],
-            parser: 'vue-eslint-parser',
-            extends: ['plugin:vue/vue3-recommended'],
-            rules: {
-                'vue/no-setup-props-destructure': 'off',
-                'vue/no-v-html': 'off',
-                'vue/multi-word-component-names': 'off',
-                'vue/require-default-prop': 'off'
-            },
-            parserOptions: {
-                extraFileExtensions: ['.vue']
-            }
-        },
-        {
-            files: ['*.d.ts'],
-            rules: {
-                'no-unused-vars': 'off',
-                'autofix/no-unused-vars': 'off'
-            }
-        },
-        {
-            files: ['*'],
-            extends: ['plugin:prettier/recommended']
         }
     ],
     rules: {
@@ -123,9 +97,17 @@ module.exports = {
                 arrowParens: 'avoid',
                 singleAttributePerLine: true
             }
-        ]
+        ],
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/consistent-indexed-object-style': [
+            'error',
+            'record'
+        ],
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/prefer-ts-expect-error': 'error'
     }
-}
-function hasFile(file) {
-    return existsSync(join(process.cwd(), file))
 }

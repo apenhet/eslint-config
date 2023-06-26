@@ -1,36 +1,35 @@
 {
-  "name": "@apenhet/eslint-config",
-  "version": "1.4.1",
-  "license": "MIT",
-  "main": "index.js",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
-    "@unocss/eslint-config": "^0.53.0",
-    "eslint": "latest",
-    "eslint-config-prettier": "latest",
-    "eslint-plugin-autofix": "latest",
-    "eslint-plugin-prettier": "latest",
-    "eslint-plugin-simple-import-sort": "latest",
-    "eslint-plugin-tailwindcss": "^3.12.1",
-    "eslint-plugin-vue": "latest",
-    "typescript": "latest"
-  },
-  "eslintConfig": {
-    "extends": "./index.js"
-  },
-  "description": "This is a shared ESlint config for åpenhet's projects.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/apenhet/eslint-config.git"
-  },
-  "bugs": {
-    "url": "https://github.com/apenhet/eslint-config/issues"
-  },
-  "homepage": "https://github.com/apenhet/eslint-config#readme"
+    "name": "@apenhet/eslint-config",
+    "version": "1.4.2",
+    "license": "MIT",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "latest",
+        "@typescript-eslint/parser": "latest",
+        "eslint": "latest",
+        "eslint-config-prettier": "latest",
+        "eslint-plugin-autofix": "latest",
+        "eslint-plugin-prettier": "latest",
+        "eslint-plugin-simple-import-sort": "latest",
+        "eslint-plugin-tailwindcss": "^3.12.1",
+        "eslint-plugin-vue": "latest",
+        "typescript": "latest"
+    },
+    "eslintConfig": {
+        "extends": "./index.js"
+    },
+    "description": "This is a shared ESlint config for åpenhet's projects.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/apenhet/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/apenhet/eslint-config/issues"
+    },
+    "homepage": "https://github.com/apenhet/eslint-config#readme"
 }
