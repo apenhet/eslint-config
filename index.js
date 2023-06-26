@@ -30,39 +30,39 @@ module.exports = {
                 'vue/multi-word-component-names': 'off',
                 'vue/require-default-prop': 'off'
             }
-        },
-        {
-            files: ['*.ts'],
-            parserOptions: {
-                project: './tsconfig.json'
-            },
-            rules: {
-                '@typescript-eslint/prefer-includes': 'error',
-                '@typescript-eslint/array-type': [
-                    'error',
-                    {
-                        default: 'array'
-                    }
-                ],
-                '@typescript-eslint/method-signature-style': [
-                    'error',
-                    'method'
-                ],
-                '@typescript-eslint/naming-convention': [
-                    'error',
-                    {
-                        selector: 'variable',
-                        format: ['camelCase', 'UPPER_CASE'],
-                        leadingUnderscore: 'allow',
-                        trailingUnderscore: 'allow'
-                    },
-                    {
-                        selector: 'typeLike',
-                        format: ['PascalCase']
-                    }
-                ]
-            }
         }
+        // {
+        //     files: ['*.ts'],
+        //     parserOptions: {
+        //         project: './tsconfig.json'
+        //     },
+        //     rules: {
+        //         '@typescript-eslint/prefer-includes': 'error',
+        //         '@typescript-eslint/array-type': [
+        //             'error',
+        //             {
+        //                 default: 'array'
+        //             }
+        //         ],
+        //         '@typescript-eslint/method-signature-style': [
+        //             'error',
+        //             'method'
+        //         ],
+        //         '@typescript-eslint/naming-convention': [
+        //             'error',
+        //             {
+        //                 selector: 'variable',
+        //                 format: ['camelCase', 'UPPER_CASE'],
+        //                 leadingUnderscore: 'allow',
+        //                 trailingUnderscore: 'allow'
+        //             },
+        //             {
+        //                 selector: 'typeLike',
+        //                 format: ['PascalCase']
+        //             }
+        //         ]
+        //     }
+        // }
     ],
     rules: {
         'no-undef': 'off',
