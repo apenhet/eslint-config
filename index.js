@@ -7,6 +7,8 @@ module.exports = {
         extraFileExtensions: ['.vue', '.json']
     },
     extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:vue/vue3-recommended',
         'plugin:prettier/recommended',
@@ -14,13 +16,6 @@ module.exports = {
     ],
     plugins: ['simple-import-sort', 'autofix'],
     overrides: [
-        {
-            files: ['*.d.ts'],
-            rules: {
-                'no-unused-vars': 'off',
-                'autofix/no-unused-vars': 'off'
-            }
-        },
         {
             files: ['*.vue'],
             parser: 'vue-eslint-parser',
@@ -72,8 +67,9 @@ module.exports = {
         'autofix/no-unused-vars': [
             'error',
             {
-                argsIgnorePattern: '^_',
-                varsIgnorePattern: '^_'
+                args: 'none',
+                varsIgnorePattern: '^_',
+                ignoreRestSiblings: true
             }
         ],
         'sort-vars': 'error',
@@ -108,6 +104,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
-        '@typescript-eslint/prefer-ts-expect-error': 'error'
+        '@typescript-eslint/prefer-ts-expect-error': 'error',
+        'tailwindcss/no-custom-classname': 'off'
     }
 }
