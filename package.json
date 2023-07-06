@@ -9,16 +9,17 @@
     },
     "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "latest",
-        "@typescript-eslint/parser": "latest",
-        "eslint": "latest",
-        "eslint-config-prettier": "latest",
-        "eslint-plugin-autofix": "latest",
-        "eslint-plugin-prettier": "latest",
-        "eslint-plugin-simple-import-sort": "latest",
-        "eslint-plugin-tailwindcss": "^3.12.1",
-        "eslint-plugin-vue": "latest",
-        "typescript": "latest"
+        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "@typescript-eslint/parser": "^5.61.0",
+        "eslint": "^8.44.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-autofix": "^1.1.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "eslint-plugin-tailwindcss": "^3.13.0",
+        "eslint-plugin-vue": "^9.15.1",
+        "prettier": "^2.8.8",
+        "typescript": "^5.1.6"
     },
     "eslintConfig": {
         "extends": "./index.js"
