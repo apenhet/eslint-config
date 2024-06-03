@@ -73,7 +73,7 @@ export default [
             '**/*.vue'
         ],
         plugins: {
-            tseslint: tseslint.plugin
+            '@typescript-eslint': tseslint.plugin
         },
         rules: {
             '@typescript-eslint/consistent-indexed-object-style': [
