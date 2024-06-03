@@ -14,20 +14,18 @@ export default [
         arrowParens: true,
         blockSpacing: true,
         braceStyle: '1tbs',
-        commaDangle: 'never',
+        commaDangle: 'never'
     }),
     ...vue.configs['flat/recommended'],
     {
-        files: [
-            '**/*.ts'
-        ],
+        files: ['**/*.ts'],
         languageOptions: {
             parser: parserTs,
             parserOptions: {
                 ecmaVersion: 'latest',
                 sourceType: 'module'
             }
-        },
+        }
     },
     {
         files: ['**/*.vue'],
@@ -41,12 +39,12 @@ export default [
         },
         rules: {
             'vue/multi-word-component-names': 'off',
-            'vue/no-multiple-template-root': 'off',
+            'vue/no-multiple-template-root': 'off'
         }
     },
     {
         plugins: {
-            '@typescript-eslint': pluginTs,
+            '@typescript-eslint': pluginTs
         },
         rules: {
             '@typescript-eslint/consistent-indexed-object-style': [
@@ -64,7 +62,7 @@ export default [
     {
         name: 'imports',
         plugins: {
-            'unused-imports': unusedImports,
+            'unused-imports': unusedImports
         },
         rules: {
             'unused-imports/no-unused-imports': 'error',
@@ -76,28 +74,28 @@ export default [
                     args: 'after-used',
                     argsIgnorePattern: '^_'
                 }
-            ],
+            ]
         }
     },
     {
         name: 'tailwindcss',
         plugins: {
-            tailwindcss: tailwindcss,
+            tailwindcss: tailwindcss
         },
         rules: {
 
             'tailwindcss/classnames-order': 'error',
             'tailwindcss/no-custom-classname': 'error',
-            'tailwindcss/no-contradicting-classname': 'error',
+            'tailwindcss/no-contradicting-classname': 'error'
         }
     },
-     {
+    {
         name: 'nuxt',
         plugins: {
-            'nuxt': nuxt
+            nuxt: nuxt
         },
         rules: {
-            'nuxt/prefer-import-meta': 'error',
+            'nuxt/prefer-import-meta': 'error'
         }
     },
     {
@@ -118,8 +116,14 @@ export default [
                 'error',
                 'always'
             ],
-            '@stylistic/array-bracket-newline': ["error", {  "minItems": 2  }],
-            '@stylistic/array-bracket-spacing': ["error", "never"]
+            '@stylistic/array-bracket-newline': [
+                'error',
+                { minItems: 2 }
+            ],
+            '@stylistic/array-bracket-spacing': [
+                'error',
+                'never'
+            ]
         }
     }
 ]
