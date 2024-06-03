@@ -1,0 +1,4 @@
+{"eslint.options": {
+    "overrideConfigFile": "./index.mjs"
+  }
+}

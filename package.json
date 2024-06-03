@@ -2,27 +2,21 @@
     "name": "@apenhet/eslint-config",
     "version": "1.4.5",
     "license": "MIT",
-    "main": "index.js",
+    "main": "./index.mjs",
+    "exports": {
+        ".": "./index.mjs"
+    },
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org/"
     },
     "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.61.0",
-        "@typescript-eslint/parser": "^5.61.0",
-        "eslint": "^8.44.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-autofix": "^1.1.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-simple-import-sort": "^10.0.0",
-        "eslint-plugin-tailwindcss": "^3.13.0",
-        "eslint-plugin-vue": "^9.15.1",
-        "prettier": "^2.8.8",
-        "typescript": "^5.1.6"
-    },
-    "eslintConfig": {
-        "extends": "./index.js"
+        "@nuxt/eslint-config": "^0.3.13",
+        "@nuxt/eslint-plugin": "^0.3.13",
+        "eslint-plugin-unused-imports": "^4.0.0",
+        "eslint-plugin-tailwindcss": "^3.17.0",
+        "eslint": "^9.4.0"
     },
     "description": "This is a shared ESlint config for åpenhet's projects.",
     "repository": {
