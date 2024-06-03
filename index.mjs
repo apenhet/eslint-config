@@ -2,6 +2,7 @@ import unusedImports from 'eslint-plugin-unused-imports'
 import stylistic from '@stylistic/eslint-plugin'
 import tailwindcss from 'eslint-plugin-tailwindcss'
 import nuxt from '@nuxt/eslint-plugin'
+import tseslint from 'typescript-eslint'
 
 export default [
     stylistic.configs.customize({
@@ -71,6 +72,9 @@ export default [
             '**/*.ts',
             '**/*.vue'
         ],
+        plugins: {
+            tseslint: tseslint.plugin
+        },
         rules: {
             '@typescript-eslint/consistent-indexed-object-style': [
                 'error',

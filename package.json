@@ -1,6 +1,6 @@
 {
     "name": "@apenhet/eslint-config",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "license": "MIT",
     "main": "./index.mjs",
     "exports": {
@@ -14,9 +14,10 @@
     "dependencies": {
         "@nuxt/eslint-plugin": "^0.3.13",
         "@stylistic/eslint-plugin": "^1.0.0",
-        "eslint-plugin-unused-imports": "^4.0.0",
+        "eslint": "^9.4.0",
         "eslint-plugin-tailwindcss": "^3.17.0",
-        "eslint": "^9.4.0"
+        "eslint-plugin-unused-imports": "^4.0.0",
+        "typescript-eslint": "^7.11.0"
     },
     "description": "This is a shared ESlint config for åpenhet's projects.",
     "repository": {
