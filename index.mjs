@@ -16,7 +16,10 @@ export default [
         commaDangle: 'never'
     }), {
         plugins: {
-            'typescript-eslint': tseslint.plugin
+            '@typescript-eslint': tseslint.plugin,
+            tailwindcss: tailwindcss,
+            'unused-imports': unusedImports,
+            'nuxt': nuxt
         },
         languageOptions: {
             parserOptions: {
@@ -30,22 +33,7 @@ export default [
     {
         rules: {
             'vue/multi-word-component-names': 'off',
-            'vue/no-multiple-template-root': 'off'
-        }
-    },
-    {
-        files: [
-            '**/*.ts',
-            '**/*.js',
-            '**/*.vue',
-            '**/*.mjs',
-            '**/*.cjs'
-        ],
-        plugins: {
-            'unused-imports': unusedImports,
-            'nuxt': nuxt
-        },
-        rules: {
+            'vue/no-multiple-template-root': 'off',
             'unused-imports/no-unused-imports': 'error',
             'unused-imports/no-unused-vars': [
                 'warn',
@@ -68,33 +56,10 @@ export default [
                     maxBOF: 0,
                     maxEOF: 0
                 }
-            ]
-        }
-    },
-    {
-        files: [
-            '**/*.vue',
-            '**/*.html'
-        ],
-        plugins: {
-            tailwindcss: tailwindcss
-        },
-        rules: {
+            ],
             'tailwindcss/classnames-order': 'error',
             'tailwindcss/no-custom-classname': 'error',
-            'tailwindcss/no-contradicting-classname': 'error'
-
-        }
-    },
-    {
-        files: [
-            '**/*.ts',
-            '**/*.vue'
-        ],
-        plugins: {
-            '@typescript-eslint': tseslint.plugin
-        },
-        rules: {
+            'tailwindcss/no-contradicting-classname': 'error',
             '@typescript-eslint/consistent-indexed-object-style': [
                 'error',
                 'record'
