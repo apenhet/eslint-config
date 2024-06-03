@@ -3,6 +3,7 @@ import stylistic from '@stylistic/eslint-plugin'
 import tailwindcss from 'eslint-plugin-tailwindcss'
 import nuxt from '@nuxt/eslint-plugin'
 import tseslint from 'typescript-eslint'
+import vue from 'eslint-plugin-vue'
 
 export default [
     stylistic.configs.customize({
@@ -14,6 +15,7 @@ export default [
         braceStyle: '1tbs',
         commaDangle: 'never'
     }),
+    ...vue.configs['flat/recommended'],
     {
         files: [
             '**/*.ts',
