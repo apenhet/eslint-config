@@ -118,7 +118,9 @@ export default [
             ],
             '@stylistic/array-bracket-newline': [
                 'error',
-                { minItems: 2 }
+                {
+                    minItems: 2
+                }
             ],
             '@stylistic/array-bracket-spacing': [
                 'error',
@@ -127,11 +129,14 @@ export default [
             '@stylistic/object-curly-newline': [
                 'error',
                 {
-                    "ObjectExpression": "always",
-        "ObjectPattern": { "multiline": true, "minProperties": 2 },
-
-        "ImportDeclaration": "never",
-        "ExportDeclaration": { "multiline": true, "minProperties": 2 }
+                    ObjectExpression: 'always',
+                    ObjectPattern: {
+                        multiline: true, minProperties: 2
+                    },
+                    ImportDeclaration: 'never',
+                    ExportDeclaration: {
+                        multiline: true, minProperties: 2
+                    }
                 }
             ]
         }
