@@ -14,13 +14,30 @@ export default [
         blockSpacing: true,
         braceStyle: '1tbs',
         commaDangle: 'never'
-    }),
+    }), {
+        plugins: {
+            'typescript-eslint': tseslint.plugin
+        },
+        languageOptions: {
+            parserOptions: {
+                parser: tseslint.parser,
+                extraFileExtensions: ['.vue'],
+                sourceType: 'module'
+            }
+        }
+    },
     ...vue.configs['flat/recommended'],
+    {
+        rules: {
+            'vue/multi-word-component-names': 'off',
+            'vue/no-multiple-template-root': 'off'
+        }
+    },
     {
         files: [
             '**/*.ts',
-            '**/*.vue',
             '**/*.js',
+            '**/*.vue',
             '**/*.mjs',
             '**/*.cjs'
         ],
@@ -88,7 +105,6 @@ export default [
             '@typescript-eslint/no-unsafe-call': 'off',
             '@typescript-eslint/no-unsafe-return': 'off',
             '@typescript-eslint/prefer-ts-expect-error': 'error'
-
         }
     }
 ]
