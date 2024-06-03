@@ -123,6 +123,16 @@ export default [
             '@stylistic/array-bracket-spacing': [
                 'error',
                 'never'
+            ],
+            '@stylistic/object-curly-newline': [
+                'error',
+                {
+                    "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true, "minProperties": 2 },
+
+        "ImportDeclaration": "never",
+        "ExportDeclaration": { "multiline": true, "minProperties": 2 }
+                }
             ]
         }
     }
