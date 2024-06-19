@@ -18,6 +18,7 @@ export default [
     }),
     ...vue.configs['flat/recommended'],
     {
+        ignores: ['.nuxt/*'],
         files: ['**/*.ts'],
         languageOptions: {
             parser: parserTs,
@@ -28,6 +29,7 @@ export default [
         }
     },
     {
+        ignores: ['.nuxt/*'],
         files: ['**/*.vue'],
         languageOptions: {
             parserOptions: {
@@ -43,9 +45,8 @@ export default [
         }
     },
     {
-        plugins: {
-            '@typescript-eslint': pluginTs
-        },
+        ignores: ['.nuxt/*'],
+        plugins: { '@typescript-eslint': pluginTs },
         rules: {
             '@typescript-eslint/consistent-indexed-object-style': [
                 'error',
@@ -61,9 +62,7 @@ export default [
     },
     {
         name: 'imports',
-        plugins: {
-            'unused-imports': unusedImports
-        },
+        plugins: { 'unused-imports': unusedImports },
         rules: {
             'unused-imports/no-unused-imports': 'error',
             'unused-imports/no-unused-vars': [
@@ -79,9 +78,7 @@ export default [
     },
     {
         name: 'tailwindcss',
-        plugins: {
-            tailwindcss: tailwindcss
-        },
+        plugins: { tailwindcss: tailwindcss },
         rules: {
 
             'tailwindcss/classnames-order': 'error',
@@ -91,12 +88,8 @@ export default [
     },
     {
         name: 'nuxt',
-        plugins: {
-            nuxt: nuxt
-        },
-        rules: {
-            'nuxt/prefer-import-meta': 'error'
-        }
+        plugins: { nuxt: nuxt },
+        rules: { 'nuxt/prefer-import-meta': 'error' }
     },
     {
         rules: {
@@ -118,25 +111,26 @@ export default [
             ],
             '@stylistic/array-bracket-newline': [
                 'error',
-                {
-                    minItems: 2
-                }
+                { minItems: 2 }
             ],
             '@stylistic/array-bracket-spacing': [
                 'error',
                 'never'
             ],
+            '@stylistic/object-property-newline': ['error'],
             '@stylistic/object-curly-newline': [
                 'error',
                 {
-                    ObjectExpression: 'always',
+                    ObjectExpression: {
+                        minProperties: 3,
+                        multiline: true
+                    },
                     ObjectPattern: {
-                        multiline: true, minProperties: 2
+                        minProperties: 3,
+                        multiline: true
                     },
                     ImportDeclaration: 'never',
-                    ExportDeclaration: {
-                        multiline: true, minProperties: 2
-                    }
+                    ExportDeclaration: { minProperties: 3 }
                 }
             ]
         }
