@@ -7,6 +7,7 @@ import pluginTs from '@typescript-eslint/eslint-plugin'
 import vue from 'eslint-plugin-vue'
 
 export default [
+    { ignores: ['.nuxt/*'] },
     stylistic.configs.customize({
         indent: 4,
         quotes: 'single',
@@ -61,6 +62,7 @@ export default [
         }
     },
     {
+        ignores: ['.nuxt/*'],
         name: 'imports',
         plugins: { 'unused-imports': unusedImports },
         rules: {
@@ -77,6 +79,7 @@ export default [
         }
     },
     {
+        ignores: ['.nuxt/*'],
         name: 'tailwindcss',
         plugins: { tailwindcss: tailwindcss },
         rules: {
@@ -87,11 +90,13 @@ export default [
         }
     },
     {
+        ignores: ['.nuxt/*'],
         name: 'nuxt',
         plugins: { nuxt: nuxt },
         rules: { 'nuxt/prefer-import-meta': 'error' }
     },
     {
+        ignores: ['.nuxt/*'],
         rules: {
             'no-undef': 'off',
             'prefer-const': 'error',
