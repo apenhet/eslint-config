@@ -1,6 +1,6 @@
 {
     "name": "@apenhet/eslint-config",
-    "version": "2.0.10",
+    "version": "2.1.0",
     "license": "MIT",
     "main": "./index.mjs",
     "exports": {
@@ -11,15 +11,15 @@
         "registry": "https://registry.npmjs.org/"
     },
     "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com> (https://github.com/apenhet/eslint-config)",
+
+    
     "dependencies": {
+        "@antfu/eslint-config": "^2.21.2",
         "@nuxt/eslint-plugin": "^0.3.13",
-        "@stylistic/eslint-plugin": "^1.0.0",
         "eslint": "^9.4.0",
         "eslint-plugin-tailwindcss": "^3.17.0",
         "eslint-plugin-unused-imports": "^4.0.0",
-        "eslint-plugin-vue": "^9.26.0",
-        "@typescript-eslint/parser": "^7.11.0",
-        "@typescript-eslint/eslint-plugin": "^7.11.0"
+        "typescript": "^5.5.3"
     },
     "description": "This is a shared ESlint config for åpenhet's projects.",
     "repository": {
@@ -29,5 +29,8 @@
     "bugs": {
         "url": "https://github.com/apenhet/eslint-config/issues"
     },
-    "homepage": "https://github.com/apenhet/eslint-config#readme"
+    "homepage": "https://github.com/apenhet/eslint-config#readme",
+    "devDependencies": {
+        "vue": "^3.4.31"
+    }
 }
