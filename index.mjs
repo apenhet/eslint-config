@@ -1,26 +1,24 @@
 import antfu from '@antfu/eslint-config'
 import unusedImports from 'eslint-plugin-unused-imports'
 import tailwindcss from 'eslint-plugin-tailwindcss'
+import ts from '@typescript-eslint/eslint-plugin'
 import nuxt from '@nuxt/eslint-plugin'
 
 export default antfu({
 	plugins: {
 		nuxt,
 		tailwindcss,
+		ts,
 		unusedImports,
 	},
 	rules: {
-		'@typescript-eslint/no-unsafe-assignment': 'off',
-		'@typescript-eslint/no-unsafe-call': 'off',
-		'@typescript-eslint/no-unsafe-member-access': 'off',
-		'@typescript-eslint/no-unsafe-return': 'off',
-		'@typescript-eslint/prefer-ts-expect-error': 'error',
-		'@typescript-eslint/unbound-method': 'off',
 		'no-multiple-empty-lines': ['error', {
 			max: 1,
 			maxBOF: 0,
 			maxEOF: 0,
 		}],
+		'no-undef': 'off',
+		'node/prefer-global/process': 'off',
 		'nuxt/prefer-import-meta': 'error',
 		'perfectionist/sort-objects': ['error'],
 		'style/array-bracket-newline': ['error', {
@@ -34,6 +32,12 @@ export default antfu({
 		'tailwindcss/classnames-order': 'error',
 		'tailwindcss/no-contradicting-classname': 'error',
 		'tailwindcss/no-custom-classname': 'error',
+		'ts/no-unsafe-assignment': 'off',
+		'ts/no-unsafe-call': 'off',
+		'ts/no-unsafe-member-access': 'off',
+		'ts/no-unsafe-return': 'off',
+		'ts/prefer-ts-expect-error': 'error',
+		'ts/unbound-method': 'off',
 		'unused-imports/no-unused-imports': 'error',
 		'unused-imports/no-unused-vars': ['warn', {
 			args: 'after-used',
@@ -54,4 +58,5 @@ export default antfu({
 	stylistic: {
 		indent: 'tab',
 	},
+	typescript: true,
 })
