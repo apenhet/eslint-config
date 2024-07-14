@@ -12,23 +12,31 @@ export default antfu({
       unusedImports,
    },
    rules: {
-      'no-multiple-empty-lines': ['error', {
-         max: 1,
-         maxBOF: 0,
-         maxEOF: 0,
-      }],
+      'antfu/consistent-list-newline': 'off',
+      'no-multiple-empty-lines': [
+         'error', {
+            max: 1,
+            maxBOF: 0,
+            maxEOF: 0,
+         },
+      ],
       'no-undef': 'off',
       'node/prefer-global/process': 'off',
       'nuxt/prefer-import-meta': 'error',
       'perfectionist/sort-objects': ['error'],
-      'style/array-bracket-newline': ['error', {
-         multiline: false,
-      }],
-      'style/array-bracket-spacing': 'error',
-      'style/object-curly-newline': ['error', {
-         consistent: true,
-         multiline: true,
-      }],
+      'style/array-bracket-newline': [
+         'error',
+         {
+            multiline: true,
+         },
+      ],
+      'style/no-whitespace-before-property': 'error',
+      'style/object-curly-newline': [
+         'error', {
+            consistent: true,
+            multiline: true,
+         },
+      ],
       'tailwindcss/classnames-order': 'error',
       'tailwindcss/no-contradicting-classname': 'error',
       'ts/no-unsafe-assignment': 'off',
@@ -38,16 +46,20 @@ export default antfu({
       'ts/prefer-ts-expect-error': 'error',
       'ts/unbound-method': 'off',
       'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': ['warn', {
-         args: 'after-used',
-         argsIgnorePattern: '^_',
-         vars: 'all',
-         varsIgnorePattern: '^_',
-      }],
+      'unused-imports/no-unused-vars': [
+         'warn', {
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+            vars: 'all',
+            varsIgnorePattern: '^_',
+         },
+      ],
       'vue/attributes-order': 'error',
-      'vue/max-attributes-per-line': ['error', {
-         singleline: 1,
-      }],
+      'vue/max-attributes-per-line': [
+         'error', {
+            singleline: 1,
+         },
+      ],
       'vue/multi-word-component-names': 'off',
       'vue/multiline-html-element-content-newline': 'error',
       'vue/no-multiple-template-root': 'off',
