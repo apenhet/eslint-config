@@ -23,7 +23,6 @@ export default antfu({
       'no-undef': 'off',
       'node/prefer-global/process': 'off',
       'nuxt/prefer-import-meta': 'error',
-      'perfectionist/sort-objects': ['error'],
       'style/array-bracket-newline': [
          'error',
          {
