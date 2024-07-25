@@ -12,6 +12,8 @@ export default antfu({
       unusedImports,
    },
    rules: {
+      'ts/no-unsafe-declaration-merging': 'off',
+      'antfu/if-newline': 'off',
       'antfu/consistent-list-newline': 'off',
       'no-multiple-empty-lines': [
          'error', {
