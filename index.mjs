@@ -11,6 +11,21 @@ export default antfu({
       ts,
       unusedImports,
    },
+   vue: {
+      overrides: {
+         'vue/attributes-order': 'error',
+         'vue/max-attributes-per-line': [
+            'error', {
+               singleline: 1,
+            },
+         ],
+         'vue/multi-word-component-names': 'off',
+         'vue/multiline-html-element-content-newline': 'error',
+         'vue/no-multiple-template-root': 'off',
+         'vue/prefer-template': 'error',
+         'vue/template-curly-spacing': 'error',
+      },
+   },
    rules: {
       'ts/no-unsafe-declaration-merging': 'off',
       'antfu/if-newline': 'off',
@@ -55,17 +70,6 @@ export default antfu({
             varsIgnorePattern: '^_',
          },
       ],
-      'vue/attributes-order': 'error',
-      'vue/max-attributes-per-line': [
-         'error', {
-            singleline: 1,
-         },
-      ],
-      'vue/multi-word-component-names': 'off',
-      'vue/multiline-html-element-content-newline': 'error',
-      'vue/no-multiple-template-root': 'off',
-      'vue/prefer-template': 'error',
-      'vue/template-curly-spacing': 'error',
    },
    stylistic: {
       indent: 3,
